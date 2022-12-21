@@ -113,15 +113,18 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  if(arguments.length<1){
+    if (arguments.length===0){
     return 0;
-  }
-  let num = 1;
-  for (let i = 0; i<arguments.length; i++){
-    num = num*arguments[i];
-  }
-  return num;
-}
+    }
+    if (arguments.length===1){
+    return arguments[0];
+    }
+    let multiplicacion = 1;
+    for (let i = 0; i<arguments.length;i++){
+    multiplicacion = arguments[i] * multiplicacion;
+    }
+    return multiplicacion;
+    }
 
 
 function cuentoElementos(arreglo){
@@ -162,6 +165,7 @@ function empiezaConNueve(n) {
   }
   return false;
 }
+
 
 
 function todosIguales(arreglo) {
@@ -216,24 +220,22 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  let nuevoarray = [];
+  var array = [];
   var suma = numero;
-  for (let i = 0; i<10;i++){
-    suma = suma +2;
-    if (suma === i){
-      break;
-    }else{
+  for(var i= 0; i<10; i++) {
+    suma = suma + 2;
+    if(suma === i) break;
+    else {
       array.push(suma);
     }
+  }
+  if(i < 10) {
+    return 'Se interrumpió la ejecución';
+  }
+  else {
+      return array;
+  }
 }
-if (i<10){
-  return "Se interrumpió la ejecución"
-}else{
-  return array;
-}
-}
-
-
 
 function continueStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
@@ -242,6 +244,17 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  let array = [];
+  let suma = numero;
+  for (let i=0; i<10;i++){
+    if(i===5){
+      continue;
+    }else{
+      suma +=2;
+      array.push(suma);
+    }
+  }
+  return array;
 }
 
 
